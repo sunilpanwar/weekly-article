@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 5: Dental Health | Dr. Deepa pet vet clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- config.js MUST load first, without defer -->
+    <script src="../js/config.js"></script>
+    <script src="../js/footer.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <!-- Back link -->
+    <a href="../index.html" class="back-link">← Back to all weeks</a>
+
+    <div class="week-badge">Week 5 • March</div>
+    <h1>🦷 Dental Health – Bad Breath Is Never Normal</h1>
+
+    <div class="content">
+        <p>“Dog breath” is not normal. If your pet’s mouth smells like a garbage can, bacteria are thriving. That leads to gum disease, tooth loss, and even heart or kidney problems. At <strong>Dr. Deepa pet vet clinic</strong>, we see dental disease as one of the most overlooked health issues.</p>
+
+        <div class="tip-box">
+            🦷 <strong>Common sense rule:</strong> Lift your pet’s lip once a week. Brownish tartar or red gums? Time for a dental check.
+        </div>
+
+        <h2>The silent danger of dental disease</h2>
+        <p>Bacteria from the mouth enter the bloodstream and can damage the heart (endocarditis), liver, and kidneys. By age 3, 80% of dogs and 70% of cats have some form of dental disease. Yet most owners ignore it until the pet stops eating.</p>
+        <p>We’ve removed teeth that were literally rotting – causing chronic pain the owner never noticed because pets hide pain well.</p>
+
+        <h2>How to brush your pet’s teeth (step‑by‑step)</h2>
+        <ul>
+            <li><strong>Week 1:</strong> Let your pet lick pet‑safe toothpaste off your finger.</li>
+            <li><strong>Week 2:</strong> Rub a gauze pad along the outside of their teeth.</li>
+            <li><strong>Week 3:</strong> Introduce a soft finger brush, still no paste.</li>
+            <li><strong>Week 4:</strong> Start brushing for 30 seconds per side, using circular motions. Focus on the cheek side – that’s where most tartar forms.</li>
+        </ul>
+
+        <div class="tip-box">
+            🪥 <strong>Dr. Deepa’s tip:</strong> “Don’t try to brush the inside of the teeth. The tongue naturally cleans that side. Only the outside needs your help.”
+        </div>
+
+        <h2>Alternatives if your pet refuses brushing</h2>
+        <ul>
+            <li>Dental water additives (chlorhexidine based).</li>
+            <li>Dental chews approved by veterinary dental organisations.</li>
+            <li>Raw meaty bones (under supervision – never cooked bones).</li>
+            <li>Professional cleaning at the clinic (once a year under anaesthesia – modern protocols make it safe).</li>
+        </ul>
+
+        <h2>Real case from our clinic</h2>
+        <p>A 7‑year‑old Indie, Rocky, was brought in because he stopped eating hard food. His breath was unbearable. An oral exam revealed two fractured teeth and advanced gum disease. After a professional cleaning and extraction of the damaged teeth, Rocky was eating normally within 48 hours. His owner said, “I had no idea he was in so much pain.” Regular dental checks would have prevented the extractions.</p>
+
+        <h2>Signs your pet needs a dental check</h2>
+        <ul>
+            <li>Bad breath (halitosis).</li>
+            <li>Yellow or brown tartar on teeth.</li>
+            <li>Red, swollen, or bleeding gums.</li>
+            <li>Dropping food or chewing on one side.</li>
+            <li>Pawing at the mouth.</li>
+        </ul>
+
+        <!-- Dynamic clinic note placeholder -->
+        <div id="clinic-note-placeholder"></div>
+
+        <h2>Action for Week 5</h2>
+        <ol>
+            <li>Smell your pet’s breath right now. If it’s bad, schedule a dental check.</li>
+            <li>Lift their lip – are the back teeth covered in brown tartar?</li>
+            <li>Buy a pet toothbrush and toothpaste (human toothpaste is toxic).</li>
+            <li>Start the 4‑week desensitisation plan above.</li>
+        </ol>
+
+        <p><strong>Next week:</strong> Valentine’s Warning – chocolates and lilies kill. Keep them away.</p>
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+</div>
+
+<script>
+    // Week‑specific clinic note (two parameters)
+    const weekSpecificMessageHeading = "Worried about your pet’s bad breath or yellow teeth?";
+    const weekSpecificMessage = "for a complete oral health assessment, including a dental check and personalised home care advice.";
+    document.getElementById('clinic-note-placeholder').innerHTML = window.createClinicNote(weekSpecificMessageHeading, weekSpecificMessage);
+</script>
+</body>
+</html>

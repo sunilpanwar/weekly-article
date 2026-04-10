@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6: Valentine's Warning | Dr. Deepa pet vet clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- config.js MUST load first, without defer -->
+    <script src="../js/config.js"></script>
+    <script src="../js/footer.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <!-- Back link -->
+    <a href="../index.html" class="back-link">← Back to all weeks</a>
+
+    <div class="week-badge">Week 6 • February</div>
+    <h1>💔 Valentine's Warning – Chocolates and Lilies Kill</h1>
+
+    <div class="content">
+        <p>Love is in the air, but danger hides in the gift box. Chocolate is toxic to dogs and cats – dark chocolate is the worst. Even a small piece can cause vomiting, seizures, or death. Lilies are equally deadly for cats – a single pollen grain on their fur, licked off, causes kidney failure within days.</p>
+
+        <div class="tip-box">
+            💔 <strong>Common sense rule:</strong> Keep chocolates on high, closed shelves, and never bring lilies into a home with cats. Opt for roses or pet‑safe flowers.
+        </div>
+
+        <h2>How much chocolate is dangerous?</h2>
+        <p>For a 10 kg dog: 30 grams of dark chocolate (one small square) is an emergency. Milk chocolate is less toxic but still dangerous. White chocolate has low theobromine but high fat – it can cause pancreatitis.</p>
+        <p>Symptoms appear within 6–12 hours: vomiting, diarrhoea, restlessness, rapid breathing, muscle tremors, seizures.</p>
+
+        <h2>What to do if your pet eats chocolate</h2>
+        <ul>
+            <li><strong>Call Dr. Deepa pet vet clinic immediately.</strong> Do not wait for symptoms.</li>
+            <li>If ingestion was within the last hour, we may advise inducing vomiting – but never do this without vet guidance.</li>
+            <li>Bring the chocolate wrapper – we need to know type and amount.</li>
+        </ul>
+
+        <div class="tip-box">
+            🌷 <strong>Lily alert:</strong> Every part of the lily plant (including pollen and water from the vase) is toxic to cats. Even a few licks can be fatal. If your cat touches a lily, wash their fur immediately with soap and water, then rush to the clinic.
+        </div>
+
+        <h2>Real case from our clinic</h2>
+        <p>Last Valentine’s Day, a family brought their 2‑year‑old Labrador, Coco, who had eaten half a box of dark chocolate. Within 30 minutes, Coco was vomiting and restless. We induced further vomiting, administered activated charcoal, and kept her on IV fluids overnight. Coco recovered fully, but the bill was high – and the fear was real. The owner said, “I never thought she could reach the counter.” Now they keep all chocolates in a locked cupboard.</p>
+
+        <h2>Pet‑safe Valentine gifts</h2>
+        <ul>
+            <li>A new toy or a catnip mouse.</li>
+            <li>Special treats (freeze‑dried chicken, dental chews).</li>
+            <li>A warm, cozy bed.</li>
+            <li>Extra cuddle time – that’s free and always appreciated.</li>
+        </ul>
+
+        <h2>Safe flowers for homes with pets</h2>
+        <ul>
+            <li>Roses (thorns removed).</li>
+            <li>Sunflowers.</li>
+            <li>Orchids.</li>
+            <li>Snapdragons.</li>
+        </ul>
+
+        <!-- Dynamic clinic note placeholder -->
+        <div id="clinic-note-placeholder"></div>
+
+        <h2>Action for Week 6</h2>
+        <ol>
+            <li>Move all chocolates to a high, closed cupboard – not on tables or counters.</li>
+            <li>If you have lilies, throw them away or give them to a non‑cat‑owning friend.</li>
+            <li>Save our clinic’s contact details (visit our location page for emergency info).</li>
+            <li>Tell family members about these dangers – especially children who might share sweets.</li>
+        </ol>
+
+        <p><strong>Next week:</strong> Love is a Routine – why predictability is your pet’s true love language.</p>
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+</div>
+
+<script>
+    // Week‑specific clinic note (two parameters)
+    const weekSpecificMessageHeading = "Planning to celebrate Valentine’s with your pet?";
+    const weekSpecificMessage = "for a list of pet‑safe flowers and emergency advice on chocolate toxicity. We’re here to help you keep your loved ones safe.";
+    document.getElementById('clinic-note-placeholder').innerHTML = window.createClinicNote(weekSpecificMessageHeading, weekSpecificMessage);
+</script>
+</body>
+</html>

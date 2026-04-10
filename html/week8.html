@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8: The Spring Shed | Dr. Deepa pet vet clinic</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- config.js MUST load first, without defer -->
+    <script src="../js/config.js"></script>
+    <script src="../js/footer.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <!-- Back link -->
+    <a href="../index.html" class="back-link">← Back to all weeks</a>
+
+    <div class="week-badge">Week 8 • March</div>
+    <h1>🧹 The Spring Shed – How to Manage the Hair Apocalypse</h1>
+
+    <div class="content">
+        <p>Hair everywhere – on your sofa, clothes, even in your food. Spring shedding is normal, but you can manage it without losing your mind. At <strong>Dr. Deepa pet vet clinic</strong>, we hear the same complaint every March: “My pet is leaving fur tumbleweeds all over the house!”</p>
+
+        <div class="tip-box">
+            🧹 <strong>Common sense rule:</strong> Brush your pet outdoors for 5 minutes every morning. The key is frequency, not duration.
+        </div>
+
+        <h2>Why shedding happens in spring</h2>
+        <p>As days get longer and temperatures rise, your pet’s body sheds the thick winter undercoat to prepare for summer. Double‑coated breeds (Labs, GSDs, Indies, Huskies) shed heavily twice a year. Indoor pets may shed lightly all year due to artificial lighting and heating.</p>
+
+        <h2>Which breeds shed the most?</h2>
+        <ul>
+            <li><strong>Heavy shedders:</strong> Labrador Retrievers, German Shepherds, Huskies, Akitas, Indies.</li>
+            <li><strong>Moderate shedders:</strong> Beagles, Boxers, Cats (Domestic Shorthairs).</li>
+            <li><strong>Light shedders:</strong> Poodles, Bichon Frises, Sphynx cats.</li>
+        </ul>
+
+        <h2>Tools that actually work</h2>
+        <ul>
+            <li><strong>Slicker brush:</strong> For removing loose topcoat and mats. Use daily.</li>
+            <li><strong>Undercoat rake:</strong> Essential for double coats – reaches the fluffy underlayer. Use 2–3 times per week.</li>
+            <li><strong>Rubber curry brush:</strong> Great for short‑haired breeds and for massage. Use daily.</li>
+            <li><strong>Deshedding tool:</strong> Use once a week only – overuse can damage guard hairs.</li>
+        </ul>
+
+        <div class="tip-box">
+            🛁 <strong>Dr. Deepa’s tip:</strong> “A warm bath with a deshedding shampoo loosens dead hair. Blow‑dry on cool setting while brushing outdoors – you’ll see clouds of hair fly off.”
+        </div>
+
+        <h2>Diet and shedding – what helps?</h2>
+        <p>Healthy skin = less shedding. Add omega‑3 fatty acids (fish oil) to your pet’s food – 1 teaspoon per 10 kg body weight daily. Also ensure adequate protein; low‑quality kibble leads to dry, brittle fur that breaks off. Ask us for a diet recommendation during your next visit.</p>
+
+        <h2>Real case from our clinic</h2>
+        <p>A 4‑year‑old Labrador, Simba, came in with patchy fur and excessive shedding. His owner was brushing once a month. We recommended a daily 5‑minute outdoor brush session using an undercoat rake, plus fish oil supplements. Within two weeks, the hair tumbleweeds reduced by 70%. Simba’s coat became glossy, and his owner said, “I can finally wear black clothes again!”</p>
+
+        <h2>What NOT to do</h2>
+        <ul>
+            <li><strong>Never shave a double‑coated dog</strong> – it ruins their natural insulation and can cause permanent coat damage.</li>
+            <li><strong>Avoid human shampoos</strong> – they dry out skin, increasing shedding.</li>
+            <li><strong>Don’t brush too hard</strong> – gentle strokes, not aggressive scraping.</li>
+        </ul>
+
+        <!-- Dynamic clinic note placeholder -->
+        <div id="clinic-note-placeholder"></div>
+
+        <h2>Action for Week 8</h2>
+        <ol>
+            <li>Buy a proper deshedding tool (slicker brush or undercoat rake – we can advise which is right for your breed).</li>
+            <li>Brush outdoors every morning for 5 minutes – set a timer.</li>
+            <li>Add fish oil to meals (start with a small dose to avoid diarrhoea, then increase gradually).</li>
+            <li>Vacuum upholstery weekly and use a lint roller on clothes.</li>
+        </ol>
+
+        <p><strong>Next week:</strong> Holi Safety – protecting pets from colours and chemicals.</p>
+    </div>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+</div>
+
+<script>
+    // Week‑specific clinic note (two parameters)
+    const weekSpecificMessageHeading = "Overwhelmed by spring shedding?";
+    const weekSpecificMessage = "for a coat and skin assessment. We’ll recommend the right brush type, diet adjustments, and a deshedding routine tailored to your pet’s breed.";
+    document.getElementById('clinic-note-placeholder').innerHTML = window.createClinicNote(weekSpecificMessageHeading, weekSpecificMessage);
+</script>
+</body>
+</html>
