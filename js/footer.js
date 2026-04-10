@@ -8,7 +8,7 @@ function injectFooter() {
             <footer>
                 ${CONFIG.clinicName} – Common sense care for every paw.<br>
                 This article is for informational purposes. Always consult your vet for medical advice.<br>
-                <a href="${CONFIG.reviewUrl}" target="_blank">📍 Visit our location</a> | 
+                <a href="${CONFIG.locationUrl}" target="_blank">📍 Visit our location</a> | 
                 <a href="${CONFIG.reviewUrl}" target="_blank">Leave a review</a>
             </footer>
         `;
