@@ -34,6 +34,86 @@ body {
     text-decoration: underline;
 }
 
+.week-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border: 2px solid #f0ede5;
+    position: relative;
+}
+/* Gradient overlay on hover */
+.week-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #d4af7a, #b8860b);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+.week-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(212, 175, 122, 0.15);
+    border-color: #d4af7a;
+}
+.week-card:hover::before {
+    transform: scaleX(1);
+}
+.card-link {
+    text-decoration: none;
+    display: block;
+    padding: 1.5rem;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+}
+.week-number {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #b8860b;
+    font-weight: 700;
+    display: inline-block;
+    background: #f9f7f3;
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+}
+.week-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0.75rem 0;
+    color: #2c3e2b;
+    line-height: 1.4;
+}
+.week-desc {
+    font-size: 0.9rem;
+    color: #6b5a47;
+    margin-top: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+}
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #d4af7a;
+    transition: all 0.3s ease;
+}
+.week-card:hover .read-more {
+    transform: translateX(4px);
+    color: #b8860b;
+}
+
 /* Week badge */
 .week-badge {
     font-size: 0.8rem;
@@ -109,3 +189,231 @@ footer {
         font-size: 1.3rem;
     }
 }
+
+/* Highlight the current week's card */
+.week-card.current-week {
+    border: 2px solid #d4af7a;
+    background: #fffef9;
+    box-shadow: 0 4px 16px rgba(212, 175, 122, 0.2);
+}
+.week-card.current-week .week-number {
+    color: #d4af7a;
+    font-weight: 700;
+}
+
+/* Coming Soon Card Styling */
+
+.card-content {
+    padding: 1.2rem;
+}
+.week-card.coming-soon {
+    background: linear-gradient(135deg, #f5f3f0 0%, #ede9e4 100%);
+    border: 2px dashed #d4af7a;
+    opacity: 0.9;
+    cursor: not-allowed;
+    position: relative;
+}
+.week-card.coming-soon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 122, 0.05) 0%, transparent 50%);
+    border-radius: 20px;
+    pointer-events: none;
+}
+.week-card.coming-soon:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-color: #d4af7a;
+}
+.coming-soon-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #d4af7a, #b8860b);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.8rem 0;
+    box-shadow: 0 4px 12px rgba(212, 175, 122, 0.25);
+}
+.countdown-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(212, 175, 122, 0.2);
+}
+.countdown-days {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #d4af7a;
+    line-height: 1;
+}
+.countdown-label {
+    font-size: 0.9rem;
+    color: #6b5a47;
+    font-style: italic;
+    font-weight: 500;
+}
+/* Enhanced phase styling */
+.phase {
+    margin: 3rem 0 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 8px solid #d4af7a;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #3b5c3a;
+    background: linear-gradient(90deg, rgba(212, 175, 122, 0.08) 0%, transparent 100%);
+    border-radius: 8px;
+    letter-spacing: 0.3px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+.phase:hover {
+    background: linear-gradient(90deg, rgba(212, 175, 122, 0.15) 0%, transparent 100%);
+    transform: translateX(4px);
+}
+/* Add visual separator between phases */
+.phase::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #d4af7a, transparent);
+    border-radius: 2px;
+}
+
+
+
+@media (max-width: 640px) {
+    /* Body and Container */
+    body {
+        padding: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 16px;
+        margin: 0;
+    }
+    /* Header Adjustments */
+    .header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid #d4af7a;
+    }
+    .header h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.3px;
+    }
+    .header p {
+        font-size: 0.95rem;
+        margin-top: 0.25rem;
+    }
+    .badge {
+        padding: 0.25rem 0.75rem;
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+    }
+    /* Phase Headings */
+    .phase {
+        margin: 1.25rem 0 0.75rem 0;
+        padding-left: 0.4rem;
+        border-left: 6px solid #d4af7a;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    /* Grid Layout */
+    .weeks-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+    /* Card Styling */
+    .week-card {
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .card-link {
+        padding: 1rem;
+    }
+    .week-number {
+        font-size: 0.7rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.3rem;
+    }
+    .week-title {
+        font-size: 1rem;
+        margin: 0.4rem 0;
+        line-height: 1.2;
+    }
+    .week-desc {
+        font-size: 0.85rem;
+        margin-top: 0.4rem;
+        -webkit-line-clamp: 2;
+    }
+    .read-more {
+        margin-top: 0.6rem;
+        font-size: 0.8rem;
+    }
+    /* Footer */
+    footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        font-size: 0.8rem;
+    }
+    /* Coming Soon Card */
+    .coming-soon-badge {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.65rem;
+        margin: 0.6rem 0;
+    }
+    .countdown-timer {
+        gap: 0.3rem;
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+    }
+    .countdown-days {
+        font-size: 1.4rem;
+    }
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+@media (max-width: 1024px) and (min-width: 641px) {
+    .weeks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .container {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .phase {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+@media (prefers-reduced-reduce) {
+       * {
+           animation: none !important;
+           transition: none !important;
+       }
+   }
