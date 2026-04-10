@@ -1,5 +1,6 @@
 // config.js
 window.CONFIG = {
+    locationUrl: "https://g.page/r/CUTnCxmQ4-egEAE",
     reviewUrl: "https://g.page/r/CUTnCxmQ4-egEAE/review",
     clinicName: "Dr. Deepa pet vet clinic"
 };
