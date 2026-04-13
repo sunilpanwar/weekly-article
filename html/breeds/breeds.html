@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027 Breed Library – 52 Weeks (Dog & Cat Alternating) | Dr. Deepa pet vet clinic</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/config.js"></script>
+    <script src="../../js/footer.js" defer></script>
+    <style>
+       
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee5d8;
+        }
+        .home-link {
+            text-decoration: none;
+            color: #b8860b;
+            font-weight: 500;
+        }
+        .clinic-name {
+            font-weight: 600;
+            color: #3b5c3a;
+        }
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .week-card {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: 0.2s;
+            border: 1px solid #eee5d8;
+        }
+        .week-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+            border-color: #d4af7a;
+        }
+        .week-card a {
+            text-decoration: none;
+            display: block;
+            padding: 1.2rem;
+            color: inherit;
+        }
+        .week-number {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #b8860b;
+            margin-bottom: 0.5rem;
+        }
+        .breed-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #3b5c3a;
+            margin-bottom: 0.5rem;
+        }
+        .breed-type {
+            font-size: 0.8rem;
+            color: #5e5a54;
+            margin-bottom: 0.5rem;
+        }
+        .breed-desc {
+            font-size: 0.85rem;
+            color: #6b5a47;
+        }
+        .dog-badge {
+            display: inline-block;
+            background: #e7f0e6;
+            color: #2c5e2a;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+        .cat-badge {
+            display: inline-block;
+            background: #f0e6e6;
+            color: #8b4513;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="top-nav">
+        <a href="../../index.html" class="home-link">🏠 Weekly Wisdom (2026)</a>
+        <span class="clinic-name">Dr. Deepa pet vet clinic</span>
+    </div>
+
+    <h1>🐕 🐈 52‑Week Breed Guide – 2027</h1>
+    <p>Dogs and cats alternate each week. Click any breed to read the full guide – health, grooming, climate suitability, and care tips for Indian homes.</p>
+
+    <div class="schedule-grid" id="breedsGrid"></div>
+
+    <div id="footer-placeholder"></div>
+</div>
+
+<script>
+    const alternatingSchedule = [
+        { week: 1, type: "Dog", name: "Indie Dog (Indian Pariah)", file: "breed01.html", desc: "Native landrace, heat‑tolerant, low maintenance, highly resilient – the healthiest choice for India." },
+        { week: 2, type: "Cat", name: "Indie Cat (Indian Billi)", file: "breed02.html", desc: "Native stray cat, hardy, low maintenance, excellent immune system – perfect for Indian homes." },
+        { week: 3, type: "Dog", name: "Labrador Retriever", file: "breed03.html", desc: "Friendly, active, prone to obesity and joint issues – needs portion control and exercise." },
+        { week: 4, type: "Cat", name: "Persian Cat", file: "breed04.html", desc: "Flat face, high grooming needs, prone to eye and breathing issues – daily coat care essential." },
+        { week: 5, type: "Dog", name: "German Shepherd", file: "breed05.html", desc: "Loyal, intelligent, prone to hip dysplasia and bloat – needs training and joint support." },
+        { week: 6, type: "Cat", name: "Siamese Cat", file: "breed06.html", desc: "Vocal, social, prone to dental issues and respiratory problems – needs attention and play." },
+        { week: 7, type: "Dog", name: "Siberian Husky", file: "breed07.html", desc: "High energy, cold‑adapted, needs air conditioning in most of India – challenging climate fit." },
+        { week: 8, type: "Cat", name: "Bengal Cat", file: "breed08.html", desc: "High energy, loves water, requires mental stimulation – needs space and enrichment." },
+        { week: 9, type: "Dog", name: "Golden Retriever", file: "breed09.html", desc: "Friendly, high shedding, prone to cancer and joint issues – regular vet checks vital." },
+        { week: 10, type: "Cat", name: "Maine Coon", file: "breed10.html", desc: "Large, friendly, prone to hip dysplasia and heart disease – needs grooming and space." },
+        { week: 11, type: "Dog", name: "Beagle", file: "breed11.html", desc: "Energetic, vocal, prone to ear infections and obesity – needs secure fencing and ear care." },
+        { week: 12, type: "Cat", name: "Ragdoll Cat", file: "breed12.html", desc: "Docile, affectionate, prone to bladder stones and heart issues – keep indoors." },
+        { week: 13, type: "Dog", name: "Pug", file: "breed13.html", desc: "Brachycephalic, heat‑sensitive, prone to breathing issues and skin fold infections." },
+        { week: 14, type: "Cat", name: "Sphynx (Hairless)", file: "breed14.html", desc: "Skin care (sunburn, oil buildup), temperature sensitivity, and dental issues." },
+        { week: 15, type: "Dog", name: "Shih Tzu", file: "breed15.html", desc: "Long coat, brachycephalic, needs regular grooming and eye care – indoor friendly." },
+        { week: 16, type: "Cat", name: "British Shorthair", file: "breed16.html", desc: "Obesity, HCM, and dental health – calm, independent, good for apartments." },
+        { week: 17, type: "Dog", name: "Rottweiler", file: "breed17.html", desc: "Strong, protective, prone to hip dysplasia and bloat – needs early socialisation." },
+        { week: 18, type: "Cat", name: "Scottish Fold", file: "breed18.html", desc: "Osteochondrodysplasia (painful joint deformity), ear infections, and HCM." },
+        { week: 19, type: "Dog", name: "Doberman", file: "breed19.html", desc: "Intelligent, energetic, prone to heart disease and von Willebrand’s – needs exercise." },
+        { week: 20, type: "Cat", name: "Exotic Shorthair", file: "breed20.html", desc: "Same as Persian (brachycephalic, PKD, tear staining) but easier grooming." },
+        { week: 21, type: "Dog", name: "Boxer", file: "breed21.html", desc: "Cancer (mast cell tumours), heart issues, brachycephalic care, high energy." },
+        { week: 22, type: "Cat", name: "Bombay Cat", file: "breed22.html", desc: "Obesity, dental disease, and affectionate but demanding nature." },
+        { week: 23, type: "Dog", name: "Great Dane", file: "breed23.html", desc: "Bloat (life‑threatening), bone cancer, joint support, space requirements." },
+        { week: 24, type: "Cat", name: "Burmese Cat", file: "breed24.html", desc: "Diabetes predisposition, cranial deformities (if inbred), and playful nature." },
+        { week: 25, type: "Dog", name: "Dachshund", file: "breed25.html", desc: "Intervertebral disc disease (back problems), weight management, digging behaviour." },
+        { week: 26, type: "Cat", name: "Abyssinian Cat", file: "breed26.html", desc: "Renal amyloidosis (kidney disease), dental issues, and high energy." },
+        { week: 27, type: "Dog", name: "Cocker Spaniel", file: "breed27.html", desc: "Chronic ear infections, eye problems (cataracts, glaucoma), coat matting." },
+        { week: 28, type: "Cat", name: "Himalayan Cat", file: "breed28.html", desc: "Same as Persian (PKD, breathing, eye care) plus colour‑point coat." },
+        { week: 29, type: "Dog", name: "Lhasa Apso", file: "breed29.html", desc: "Grooming, eye care, kidney issues (renal dysplasia), independent nature." },
+        { week: 30, type: "Cat", name: "Norwegian Forest Cat", file: "breed30.html", desc: "HCM, hip dysplasia, and heavy shedding (double coat) – needs brushing." },
+        { week: 31, type: "Dog", name: "Maltese", file: "breed31.html", desc: "Dental disease, tear staining, patellar luxation, and fragile bones." },
+        { week: 32, type: "Cat", name: "Turkish Angora", file: "breed32.html", desc: "Deafness (white cats with blue eyes), HCM, and grooming needs." },
+        { week: 33, type: "Dog", name: "Pomeranian", file: "breed33.html", desc: "Luxating patella, collapsing trachea, dental care, and heat sensitivity." },
+        { week: 34, type: "Cat", name: "Russian Blue", file: "breed34.html", desc: "Dental issues, obesity, and shy temperament with strangers." },
+        { week: 35, type: "Dog", name: "Bulldog (English/French)", file: "breed35.html", desc: "Severe brachycephalic issues, skin fold infections, heatstroke, caesarean births." },
+        { week: 36, type: "Cat", name: "Savannah Cat", file: "breed36.html", desc: "Hybrid legalities, high energy, escape risk, and feeding requirements." },
+        { week: 37, type: "Dog", name: "Indian Spitz", file: "breed37.html", desc: "Shedding, barking tendency, loyalty, and adaptability to Indian climate." },
+        { week: 38, type: "Cat", name: "Chartreux Cat", file: "breed38.html", desc: "Patellar luxation, dental disease, and quiet nature." },
+        { week: 39, type: "Dog", name: "Rajapalayam (Indian Sighthound)", file: "breed39.html", desc: "Rare breed, exercise needs, hunting instincts, and health screening." },
+        { week: 40, type: "Cat", name: "Oriental Shorthair", file: "breed40.html", desc: "Dental issues, respiratory infections, and separation anxiety." },
+        { week: 41, type: "Dog", name: "Mudhol Hound (Caravan Hound)", file: "breed41.html", desc: "Genetic eye disorders (PRA), high prey drive, and joint health." },
+        { week: 42, type: "Dog", name: "Chippiparai", file: "breed42.html", desc: "Endurance, climate adaptation, and bonding with single owners." },
+        { week: 43, type: "Dog", name: "Kombai", file: "breed43.html", desc: "Aggression management, working dog instincts, and secure fencing." },
+        { week: 44, type: "Dog", name: "Greyhound", file: "breed44.html", desc: "Thin skin (injuries easily), dental care, need for soft bedding." },
+        { week: 45, type: "Dog", name: "Dalmatian", file: "breed45.html", desc: "Urinary stones (high purine diet), deafness, and exercise needs." },
+        { week: 46, type: "Dog", name: "Border Collie", file: "breed46.html", desc: "Mental stimulation, herding behaviour, epilepsy risk." },
+        { week: 47, type: "Dog", name: "Australian Shepherd", file: "breed47.html", desc: "Eye diseases, epilepsy, and high energy." },
+        { week: 48, type: "Dog", name: "Bernese Mountain Dog", file: "breed48.html", desc: "Heat intolerance, cancer prevalence, bloat, and joint issues." },
+        { week: 49, type: "Dog", name: "Newfoundland", file: "breed49.html", desc: "Heatstroke risk in India, drooling, heart disease, and grooming." },
+        { week: 50, type: "Dog", name: "Saint Bernard", file: "breed50.html", desc: "Severe heat sensitivity, bloat, joint problems, and drool management." },
+        { week: 51, type: "Dog", name: "Corgi (Pembroke/Cardigan)", file: "breed51.html", desc: "Back problems (long spine), obesity, and herding behaviour." },
+        { week: 52, type: "Dog", name: "Yorkshire Terrier", file: "breed52.html", desc: "Fragile trachea, dental disease, hypoglycemia, and grooming." }
+    ];
+
+    const grid = document.getElementById('breedsGrid');
+    if (grid) {
+        grid.innerHTML = alternatingSchedule.map(item => `
+            <div class="week-card">
+                <a href="${item.file}">
+                    <div class="week-number">Week ${item.week}</div>
+                    <div class="breed-name">${item.name}</div>
+                    <div class="breed-type">${item.type}</div>
+                    <div class="breed-desc">${item.desc}</div>
+                    <span class="${item.type === 'Dog' ? 'dog-badge' : 'cat-badge'}">${item.type}</span>
+                </a>
+            </div>
+        `).join('');
+    }
+</script>
+</body>
+</html>

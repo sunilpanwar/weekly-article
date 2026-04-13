@@ -1,4 +1,23 @@
 /* style.css - Dr. Deepa's Pet Clinic */
+
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee5d8;
+        }
+        .home-link {
+            text-decoration: none;
+            color: #b8860b;
+            font-weight: 500;
+        }
+        .clinic-name {
+            font-weight: 600;
+            color: #3b5c3a;
+        }
+        
 * {
     margin: 0;
     padding: 0;
@@ -7,14 +26,15 @@
 
 body {
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-    background: #f9f7f3;
+    background: #d6ebee;
+    /*background: transparent;  /* Fully transparent */
     color: #2c2418;
     line-height: 1.6;
     padding: 1.5rem;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 95%;
     margin: 0 auto;
     background: white;
     border-radius: 32px;
