@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        // Before calling injectFooter, set a flag
+        window.isLandingPage = true;
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/config.js"></script>
-    <script src="js/footer.js" defer></script>
+    <script src="js/footer.js" defer></script>    
     <title>Dr. Deepa’s Pet Clinic – Weekly Wisdom</title>
     <style>
         * {
@@ -14,18 +18,7 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f9f7f3;
-            color: #2c2418;
-            line-height: 1.5;
-            padding: 1.5rem;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        
 
         /* Header */
         .header {
@@ -254,91 +247,29 @@
         { elementId: "phase6", start: 40, end: 52 }  // 41-52
     ];
 
-function buildCards() {
-    const currentWeek = getCurrentWeek();
-    const nextWeek = currentWeek + 1;
-
-    phases.forEach(phase => {
-        const container = document.getElementById(phase.elementId);
-        if (!container) return;
-        container.innerHTML = "";
-
-        for (let i = phase.start; i < phase.end; i++) {
-            const weekNum = i + 1;
-            // Display published weeks (up to current week)
-            if (weekNum <= currentWeek) {
+    function buildCards() {
+        phases.forEach(phase => {
+            const container = document.getElementById(phase.elementId);
+            if (!container) return;
+            container.innerHTML = "";
+            for (let i = phase.start; i < phase.end; i++) {
+                const weekNum = i + 1;
                 const data = weeksData[i];
                 const card = document.createElement("div");
                 card.className = "week-card";
-                // Highlight the current week
-                if (weekNum === currentWeek) {
-                    card.classList.add("current-week");
-                }
                 card.innerHTML = `
                     <a href="html/week${weekNum}.html" class="card-link">
                         <div class="week-number">WEEK ${weekNum}</div>
                         <div class="week-title">${data.title}</div>
-                        <div class="week-desc">${data.desc}<div class="read-more">Read →</div></div>
+                        <div class="week-desc">${data.desc}</div>
+                        <div class="read-more">Read →</div>
                     </a>
                 `;
                 container.appendChild(card);
             }
-            // Display "Coming Soon" for next week only
-            else if (weekNum === nextWeek) {
-                const data = weeksData[i];
-                const card = document.createElement("div");
-                card.className = "week-card coming-soon";
-                // Calculate days until next week's release
-                const daysUntilRelease = calculateDaysUntilWeek(nextWeek);
-                card.innerHTML = `
-                    <div class="card-content">
-                        <div class="week-number">WEEK ${weekNum}</div>
-                        <div class="week-title">${data.title}</div>
-                        <!--<div class="week-desc">${data.desc}</div>-->
-                        <div class="countdown-timer">
-                            <span class="coming-soon-badge">Coming Soon</span>
-                            <span class="countdown-days">${daysUntilRelease}</span>
-                            <span class="countdown-label">day${daysUntilRelease !== 1 ? 's' : ''} away</span>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(card);
-            }
-            // Skip future weeks beyond next week
-        }
-    });
-}
-
-    function getCurrentWeek() {
-        // Define the start date of the year (January 1, 2026)
-        const yearStart = new Date(2026, 0, 1);
-        const today = new Date();
-
-        // Calculate the number of days elapsed since the start of the year
-        const daysElapsed = Math.floor((today - yearStart) / (1000 * 60 * 60 * 24));
-
-        // Calculate the current week (1-52)
-        const currentWeek = Math.floor(daysElapsed / 7) + 1;
-
-        // Ensure the week is within the valid range (1-52)
-        return Math.max(1, Math.min(currentWeek, 52));
+        });
     }
 
-// Helper function to calculate days until a specific week's release
-function calculateDaysUntilWeek(weekNum) {
-    const yearStart = new Date(2026, 0, 1);
-    const today = new Date();
-
-    // Calculate the start date of the target week
-    const daysToAdd = (weekNum - 1) * 7;
-    const weekStartDate = new Date(yearStart);
-    weekStartDate.setDate(weekStartDate.getDate() + daysToAdd);
-
-    // Calculate days remaining
-    const daysRemaining = Math.ceil((weekStartDate - today) / (1000 * 60 * 60 * 24));
-
-    return Math.max(0, daysRemaining);
-}
     buildCards();
 </script>
 </body>
